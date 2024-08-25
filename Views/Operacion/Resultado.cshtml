@@ -1,0 +1,22 @@
+@model PC1.Controllers.OperacionModel;
+
+<form asp-action="Invertir" method="post">
+    <label>Nombre y Apellido:</label>
+    <input type="text" name="Nombre" required /><br />
+
+    <label>Correo electrónico:</label>
+    <input type="email" name="Correo" required /><br />
+
+    <label>Fecha de Operación:</label>
+    <input type="date" name="FechaOperacion" required /><br />
+
+    <label>Instrumentos:</label><br />
+    <input type="checkbox" name="Instrumentos" value="S&P 500" /> S&P 500<br />
+    <input type="checkbox" name="Instrumentos" value="Dow Jones" /> Dow Jones<br />
+    <input type="checkbox" name="Instrumentos" value="Bonos US" /> Bonos US<br />
+
+    <label>Monto Abonar:</label>
+    <input type="number" name="MontoAbonar" required /><br />
+
+    <button type="submit">Invertir</button>
+</form>

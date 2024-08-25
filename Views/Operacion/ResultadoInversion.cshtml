@@ -1,0 +1,54 @@
+@model PC1.Controllers.OperacionModel
+
+<h2>Resultado de la Inversión</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Nombre y Apellido</th>
+        <td>@Model.Nombre</td>
+    </tr>
+    <tr>
+        <th>Correo Electrónico</th>
+        <td>@Model.Correo</td>
+    </tr>
+    <tr>
+        <th>Fecha de Operación</th>
+        <td>@Model.FechaOperacion.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Instrumentos Seleccionados</th>
+        <td>
+            @if (Model.Instrumentos != null && Model.Instrumentos.Any())
+            {
+                <ul>
+                    @foreach (var instrumento in Model.Instrumentos)
+                    {
+                        <li>@instrumento</li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <span>Ninguno</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Monto a Abonar</th>
+        <td>S/@Model.MontoAbonar?.ToString("0.00")</td>
+    </tr>
+    <tr>
+        <th>Comisión</th>
+        <td>S/@Model.Comision?.ToString("0.00")</td>
+    </tr>
+    <tr>
+        <th>IGV</th>
+        <td>S/@Model.IGV?.ToString("0.00")</td>
+    </tr>
+    <tr>
+        <th>Total a Pagar</th>
+        <td>S/@Model.TotalAPagar?.ToString("0.00")</td>
+    </tr>
+</table>
+
+<a href="/">Regresar</a>
